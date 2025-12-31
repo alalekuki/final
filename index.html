@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>個人網站</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        font-family: "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+        background: #fff2bc;
+        transition: background 1s ease;
+      }
+
+      body.yellow-bg {
+        background: #ffcc00;
+      }
+      /* Ball container */
+      .ball-container {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 200px;
+        height: 400px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        border-radius: 15px;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 100;
+      }
+
+      .ball-container.show {
+        opacity: 1;
+      }
+
+      .bouncing-ball {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: #fff2bc;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="centertext" class="Center-text">歡迎來到我的個人網站</button>
+    <div class="ball-container" id="ballContainer">
+      <div class="bouncing-ball" id="bouncingBall"></div>
+    </div>
+
+    <div id="a" class="box a">
+      <p>關於我</p>
+    </div>
+    <div id="b" class="box b">
+      <p>作品</p>
+    </div>
+    <div id="c" class="box c">
+      <p>聯絡</p>
+    </div>
+
+    <div class="flex-allright">
+      <p>Copyright © A111110051 scfd, 2025</p>
+    </div>
+
+    <!-- Page overlays -->
+    <div id="page-a" class="page-overlay">
+      <div class="page-content">
+        <button class="back-btn" onclick="closePage('page-a')">×</button>
+        <h1>關於我</h1>
+        <p>您好！我是郭佳青 畢業於scfd！</p>
+        <p>
+          我專注於將創意與技術結合，創造出令人驚豔的數位體驗。無論是網頁設計還是創意專案，我都全力以赴，追求卓越。
+        </p>
+        <h2 style="color: #1e3c72; margin-top: 30px; margin-bottom: 15px">
+          技能專長
+        </h2>
+        <ul>
+          <li>服裝設計與縫製</li>
+          <li>網頁與介面設計(HTML, CSS, JavaScript)</li>
+          <li>創意視覺設計</li>
+          <li>專案管理</li>
+          <li>精熟Ps與Ai</li>
+          <li>敘事結構與角色設計</li>
+        </ul>
+        <p style="margin-top: 30px">
+          我相信每個專案都是一個故事，而我的使命就是用最好的方式來講述這些故事。
+        </p>
+      </div>
+    </div>
+
+    <div id="page-b" class="page-overlay">
+      <div class="page-content">
+        <button class="back-btn" onclick="closePage('page-b')">×</button>
+        <h1>作品集</h1>
+        <p>以下是我精心製作的部分作品，每個專案都代表著我的用心與努力。</p>
+
+        <h2 style="color: #1e3c72; margin-top: 30px; margin-bottom: 15px">
+          專案一：個人網站
+        </h2>
+        <p>
+          這是一個展示個人品牌的互動式網站，採用現代化設計風格，具有流暢的動畫效果和直觀的使用者介面。
+        </p>
+
+        <h2 style="color: #1e3c72; margin-top: 30px; margin-bottom: 15px">
+          專案二：接案網站展示
+        </h2>
+        <p>
+          <strong>Notion:</strong>
+          <a
+            href="https://www.notion.so/2b3ec5bbeadb80b0b9c2e9f5970ed0b2?source=copy_link"
+            target="_blank"
+            >綠比的Notion</a
+          >
+        </p>
+
+        <p style="margin-top: 30px; font-style: italic; color: #666">
+          更多作品持續更新中...
+        </p>
+      </div>
+    </div>
+
+    <div id="page-c" class="page-overlay">
+      <div class="page-content">
+        <button class="back-btn" onclick="closePage('page-c')">×</button>
+        <h1>聯絡方式</h1>
+        <p>
+          很高興能與您交流！如果您對我的作品感興趣，或想討論合作機會，歡迎透過以下方式與我聯繫。
+        </p>
+
+        <div class="contact-info">
+          <h2 style="margin-bottom: 15px; font-size: 24px">📧 Email</h2>
+          <p>
+            <a href="mailto:your.email@example.com">greebeeplay@gmail.com</a>
+          </p>
+
+          <h2 style="margin-top: 25px; margin-bottom: 15px; font-size: 24px">
+            💼 專業平台
+          </h2>
+          <p>
+            <strong>GitHub:</strong>
+            <a href="https://alalekuki.github.io/final/" target="_blank"
+              >https://alalekuki.github.io/final/</a
+            >
+          </p>
+          <p>
+            <strong>Clibo:</strong>
+            <a href="https://clibo.tw/users/gcYR7V" target="_blank"
+              >https://clibo.tw/users/gcYR7V</a
+            >
+          </p>
+
+          <h2 style="margin-top: 25px; margin-bottom: 15px; font-size: 24px">
+            🌐 社群媒體
+          </h2>
+          <p>
+            <strong>Instagram:</strong>
+            <a
+              href="https://www.instagram.com/duaduaboooo?igsh=MWNreHM0dGlqZ2dwaQ%3D%3D&utm_source=qr"
+              target="_blank"
+              >duaduaboooo</a
+            >
+          </p>
+        </div>
+
+        <p style="margin-top: 30px; text-align: center; color: #666">
+          期待與您的交流！
+        </p>
+      </div>
+    </div>
+
+    <script src="1.js"></script>
+  </body>
+</html>
